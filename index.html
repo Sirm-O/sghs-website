@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sengani Girls School - Excellence in Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-white: #FFFFFF;
+            --secondary-white: #F8F5F2;
+            --dark-brown: #5D4037;
+            --medium-brown: #8D6E63;
+            --light-brown: #D7CCC8;
+            --accent: #C6945A;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 12px rgba(93, 64, 55, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--primary-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-brown);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: minmax(300px, 1fr);
+            gap: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--dark-brown);
+            color: var(--primary-white);
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid var(--dark-brown);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--dark-brown);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            color: var(--accent);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--dark-brown);
+            border: 2px solid var(--dark-brown);
+        }
+        
+        .btn-outline:hover {
+            background: var(--dark-brown);
+            color: var(--primary-white);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--dark-brown);
+        }
+        
+        .logo-text span {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--dark-brown);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(245, 241, 237, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-brown);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            grid-column: 1 / -1;
+            padding: 2rem 0;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .core-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .value-card {
+            background: var(--primary-white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .value-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .mv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .mv-card {
+            background: var(--secondary-white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .mv-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .mv-card p {
+            font-size: 1.1rem;
+        }
+        
+        /* Messages Section */
+        .messages {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .message-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .message-card {
+            background: var(--primary-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .message-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .message-img {
+            height: auto;
+            min-height: 220px;
+            overflow: visible;
+        }
+        
+        .message-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .message-card:hover .message-img img {
+            transform: scale(1.1);
+        }
+        
+        .message-info {
+            padding: 25px;
+        }
+        
+        .message-info h3 {
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+        
+        .position {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Programs Section */
+        .programs {
+            padding: 100px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .program-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--light-brown);
+            flex-wrap: wrap;
+        }
+        
+        .program-tab {
+            padding: 15px 30px;
+            background: transparent;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-light);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .program-tab.active {
+            color: var(--dark-brown);
+            font-weight: 600;
+        }
+        
+        .program-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .program-content {
+            display: none;
+        }
+        
+        .program-content.active {
+            display: block;
+        }
+        
+        .curriculum-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .curriculum-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .curriculum-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        /* Downloads Section */
+        .downloads {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .download-card {
+            background: var(--primary-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
+        }
+        
+        .download-icon {
+            background: var(--light-brown);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--dark-brown);
+        }
+        
+        .download-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .download-info h3 {
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            background: var(--primary-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-brown);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background: var(--primary-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-brown);
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        /* Admin Login Styles */
+        .admin-login-page {
+            display: none;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary-white);
+            padding: 40px 20px;
+        }
+        
+        .admin-login-container {
+            background: var(--primary-white);
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .admin-login-container h2 {
+            margin-bottom: 30px;
+            color: var(--dark-brown);
+        }
+        
+        .admin-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        /* Admin Dashboard Styles */
+        .admin-dashboard {
+            display: none;
+            min-height: 100vh;
+            padding: 100px 20px 40px;
+            background: var(--secondary-white);
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-brown);
+        }
+        
+        .upload-section {
+            background: var(--primary-white);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .upload-section h3 {
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .gallery-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 4px;
+            overflow: hidden;
+            height: 100px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item .delete-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(255, 0, 0, 0.7);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .delete-btn {
+            opacity: 1;
+        }
+        
+        /* NEW: Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            height: 300px;
+            transition: var(--transition);
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(93, 64, 55, 0.2);
+        }
+        
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(93, 64, 55, 0.9), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(70px);
+            transition: var(--transition);
+        }
+        
+        .gallery-card:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h3 {
+            color: var(--primary-white);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        
+        /* NEW: News & Events Section */
+        .news-events {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: var(--primary-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
+        }
+        
+        .news-img {
+            height: auto;
+            min-height: 220px;
+            overflow: visible;
+        }
+        
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .news-card:hover .news-img img {
+            transform: scale(1.1);
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-date {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .news-date i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        .news-date span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .news-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .news-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .news-category {
+            display: inline-block;
+            background: var(--light-brown);
+            color: var(--dark-brown);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: var(--primary-white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: var(--primary-white);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--light-brown);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary-white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--light-brown);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: var(--primary-white);
+                width: 100%;
+                flex-direction: column;
+                padding: 30px 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .program-tabs {
+                flex-direction: column;
+            }
+            
+            .admin-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-symbol">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <circle cx="30" cy="30" r="28" fill="#5D4037" />
+                        <path d="M30 12 L40 30 L30 48 L20 30 Z" fill="#F8F5F2" />
+                        <circle cx="30" cy="30" r="8" fill="#C6945A" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Sengani Girls School</h1>
+                    <span>Rubbies are Winners</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#mission">Mission & Vision</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#news">News & Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="adminLoginLink">Admin Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Excellence in Girls' Education Since 1992</h1>
+                <p>Sengani Girls School provides a transformative educational experience that empowers young women to achieve academic excellence, develop strong character, and become leaders in their communities.</p>
+                <div class="hero-btns">
+                    <a href="#about" class="btn">Discover More</a>
+                    <a href="#contact" class="btn btn-accent">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our School</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500&q=80" alt="Sengani Girls School Campus">
+                </div>
+                
+                <div class="about-text">
+                    <h3>Nurturing Excellence Since 1992</h3>
+                    <p>Sengani Girls School is a premier educational institution dedicated to providing quality education to young women. Established in 1992, we have a rich history of academic excellence and character development.</p>
+                    <p>Our beautiful 25-acre campus provides the perfect environment for learning and personal growth. With state-of-the-art facilities and a dedicated faculty, we offer a holistic education that prepares students for success in university and beyond.</p>
+                    
+                    <h3 style="margin-top: 30px;">Our Core Values</h3>
+                    <div class="core-values">
+                        <div class="value-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Excellence</h4>
+                            <p>Striving for the highest standards in all endeavors</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <h4>Integrity</h4>
+                            <p>Upholding honesty and strong moral principles</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Respect</h4>
+                            <p>Valuing diversity and treating others with dignity</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                            <p>Encouraging creativity and forward-thinking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Guiding Principles</h2>
+            </div>
+            
+            <div class="mv-container">
+                <div class="mv-card">
+                    <h3>School Motto</h3>
+                    <p>"Rubbies, Diamonds and Gold are Winners"</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3>Our Mission</h3>
+                    <p>To provide a transformative educational experience that empowers young women to achieve academic excellence, develop strong character, and become ethical leaders who make a positive impact in their communities and the world.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3>Our Vision</h3>
+                    <p>To be a premier institution that nurtures innovative thinkers, compassionate leaders, and globally-minded citizens who are prepared to meet the challenges of the 21st century with wisdom and integrity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section class="messages" id="messages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Leadership Messages</h2>
+            </div>
+            
+            <div class="message-container">
+                <div class="message-card">
+                    <div class="message-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Principal">
+                    </div>
+                    <div class="message-info">
+                        <h3>Dr. Margaret Mwendwa</h3>
+                        <span class="position">Principal</span>
+                        <p>"At Sengani Girls School, we believe in nurturing the whole person - academically, emotionally, and socially. Our dedicated faculty works tirelessly to create an environment where every student can discover her unique talents and develop the skills needed for success in an ever-changing world."</p>
+                    </div>
+                </div>
+                
+                <div class="message-card">
+                    <div class="message-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Board Chair">
+                    </div>
+                    <div class="message-info">
+                        <h3>Dr. Elizabeth Njoroge</h3>
+                        <span class="position">Board Chairperson</span>
+                        <p>"As the Board Chair, I'm proud of Sengani's legacy of empowering young women to become leaders in their communities. Our commitment to excellence, integrity, and innovation ensures that our students receive an education that prepares them for the challenges and opportunities of the future."</p>
+                    </div>
+                </div>
+                
+                <div class="message-card">
+                    <div class="message-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Deputy Principal 1">
+                    </div>
+                    <div class="message-info">
+                        <h3>Mrs. Margaret Maragia</h3>
+                        <span class="position">Deputy Principal-Academics</span>
+                        <p>"Our academic programs are designed to challenge and inspire. With a curriculum that balances rigorous academics with practical life skills, we prepare our students not just for exams, but for lifelong learning and meaningful contributions to society."</p>
+                    </div>
+                </div>
+
+                <div class="message-card">
+                    <div class="message-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Deputy principal 2">
+                    </div>
+                    <div class="message-info">
+                        <h3>Mrs. Rhoda Mwende</h3>
+                        <span class="position">Deputy Principal-Administration</span>
+                        <p>"Our academic programs are designed to challenge and inspire. With a curriculum that balances rigorous academics with practical life skills, we prepare our students not just for exams, but for lifelong learning and meaningful contributions to society."</p>
+                    </div>
+                </div>
+
+                <div class="message-card">
+                    <div class="message-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Dean">
+                    </div>
+                    <div class="message-info">
+                        <h3>Mrs. Rose Mati</h3>
+                        <span class="position">Academic Dean of Studies</span>
+                        <p>"Our academic programs are designed to challenge and inspire. With a curriculum that balances rigorous academics with practical life skills, we prepare our students not just for exams, but for lifelong learning and meaningful contributions to society."</p>
+                    </div>
+                </div>
+
+                <div class="message-card">
+                    <div class="message-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Exams">
+                    </div>
+                    <div class="message-info">
+                        <h3>Mr. Samwel Ochieng'</h3>
+                        <span class="position">HOD Examination</span>
+                        <p>"Our academic programs are designed to challenge and inspire. With a curriculum that balances rigorous academics with practical life skills, we prepare our students not just for exams, but for lifelong learning and meaningful contributions to society. We are fully engaged to making sure that our examinations are top notch and focused towards ensuring academic excellence in the four-year cycle the girls are with us"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Programs</h2>
+            </div>
+            
+            <div class="program-tabs">
+                <button class="program-tab active" data-program="curriculum">Curriculum</button>
+                <button class="program-tab" data-program="stem">STEM Program</button>
+                <button class="program-tab" data-program="arts">Arts Program</button>
+                <button class="program-tab" data-program="sports">Sports & Athletics</button>
+            </div>
+            
+            <div class="program-content active" id="curriculum-content">
+                <h3>Comprehensive Academic Curriculum</h3>
+                <p>Our curriculum is designed to provide a balanced education that develops critical thinking, creativity, and practical skills. We follow the national curriculum while enhancing it with our unique programs:</p>
+                
+                <div class="about-content" style="margin-top: 30px;">
+                    <div class="about-text">
+                        <h4>Core Subjects</h4>
+                        <ul class="curriculum-list">
+                            <li>Mathematics & Advanced Mathematics</li>
+                            <li>English Language & Literature</li>
+                            <li>Kiswahili Language & Literature</li>
+                            <li>Integrated Sciences (Biology, Chemistry, Physics)</li>
+                            <li>Humanities (History, Geography, Social Studies)</li>
+                            <li>Religious Education</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-text">
+                        <h4>Specialized Programs</h4>
+                        <ul class="curriculum-list">
+                            <li>STEM Innovation Program</li>
+                            <li>Performing & Visual Arts</li>
+                            <li>Entrepreneurship & Business Studies</li>
+                            <li>Information & Communication Technology</li>
+                            <li>Languages Program (French, German, Mandarin)</li>
+                            <li>Leadership & Life Skills Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-content" id="stem-content">
+                <h3>Science, Technology, Engineering & Mathematics</h3>
+                <p>Our STEM program prepares students for careers in science, technology, engineering, and mathematics with modern laboratories and research opportunities.</p>
+                
+                <div class="about-content" style="margin-top: 30px;">
+                    <div class="about-text">
+                        <h4>Program Highlights</h4>
+                        <ul class="curriculum-list">
+                            <li>State-of-the-art science laboratories</li>
+                            <li>Robotics and coding programs</li>
+                            <li>Annual science fair and innovation challenges</li>
+                            <li>Partnerships with universities and tech companies</li>
+                            <li>Research projects and mentorship programs</li>
+                            <li>Advanced mathematics and physics programs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-text">
+                        <h4>Facilities</h4>
+                        <ul class="curriculum-list">
+                            <li>Fully equipped physics, chemistry, biology labs</li>
+                            <li>Computer lab with 3D printing capabilities</li>
+                            <li>Robotics workshop</li>
+                            <li>Green energy research station</li>
+                            <li>Mathematics resource center</li>
+                            <li>STEM innovation hub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-content" id="arts-content">
+                <h3>Arts & Humanities Program</h3>
+                <p>Explore creativity and critical thinking through our comprehensive arts program including literature, history, visual arts, and performing arts.</p>
+                
+                <div class="about-content" style="margin-top: 30px;">
+                    <div class="about-text">
+                        <h4>Program Highlights</h4>
+                        <ul class="curriculum-list">
+                            <li>Visual arts studio with professional equipment</li>
+                            <li>Performing arts theater and dance studio</li>
+                            <li>Creative writing and poetry workshops</li>
+                            <li>Music program with various instrument options</li>
+                            <li>Annual cultural festival and art exhibition</li>
+                            <li>Debate and public speaking competitions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-text">
+                        <h4>Facilities</h4>
+                        <ul class="curriculum-list">
+                            <li>500-seat auditorium with professional lighting</li>
+                            <li>Art studio with pottery kiln and printing press</li>
+                            <li>Music rooms with various instruments</li>
+                            <li>Drama studio with stage and costume department</li>
+                            <li>Digital media lab for film and photography</li>
+                            <li>Literature and languages resource center</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-content" id="sports-content">
+                <h3>Sports & Athletics Program</h3>
+                <p>Develop physical fitness and teamwork through our diverse sports program including basketball, volleyball, track and field, and more.</p>
+                
+                <div class="about-content" style="margin-top: 30px;">
+                    <div class="about-text">
+                        <h4>Program Highlights</h4>
+                        <ul class="curriculum-list">
+                            <li>Competitive sports teams in 12 different disciplines</li>
+                            <li>Annual inter-house sports championship</li>
+                            <li>Fitness and wellness program</li>
+                            <li>Sports science and nutrition education</li>
+                            <li>Leadership training through team sports</li>
+                            <li>Partnerships with national sports organizations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-text">
+                        <h4>Facilities</h4>
+                        <ul class="curriculum-list">
+                            <li>Olympic-size swimming pool</li>
+                            <li>Track and field stadium</li>
+                            <li>Indoor sports complex (basketball, volleyball)</li>
+                            <li>Tennis and netball courts</li>
+                            <li>Fitness center with modern equipment</li>
+                            <li>Sports medicine clinic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads" id="downloads">
+        <div class="container">
+            <div class="section-title">
+                <h2>Downloads & Resources</h2>
+            </div>
+            
+            <div class="downloads-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Newsletters</h3>
+                        <p>Monthly school newsletters and updates</p>
+                        <a href="#" class="btn btn-outline" download><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Academic Reports</h3>
+                        <p>Term reports and academic calendars</p>
+                        <a href="#" class="btn btn-outline" download><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Curriculum Guides</h3>
+                        <p>Detailed curriculum for all programs</p>
+                        <a href="#" class="btn btn-outline" download><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Admission Forms</h3>
+                        <p>Application forms and requirements</p>
+                        <a href="#" class="btn btn-outline" download><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Event Calendars</h3>
+                        <p>School events and activities schedule</p>
+                        <a href="#" class="btn btn-outline" download><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Policy Documents</h3>
+                        <p>School policies and code of conduct</p>
+                        <a href="#" class="btn btn-outline" download><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>School Gallery</h2>
+                <p>A visual journey through our campus life and activities</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3" alt="School Building">
+                    <div class="gallery-overlay">
+                        <h3>Main Academic Building</h3>
+                        <p>Our state-of-the-art learning facility</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3" alt="Students in Classroom">
+                    <div class="gallery-overlay">
+                        <h3>Interactive Learning</h3>
+                        <p>Students engaged in classroom activities</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3" alt="Science Lab">
+                    <div class="gallery-overlay">
+                        <h3>Science Laboratory</h3>
+                        <p>Students conducting experiments</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3" alt="Art Class">
+                    <div class="gallery-overlay">
+                        <h3>Art Studio</h3>
+                        <p>Creative expression in visual arts</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?ixlib=rb-4.0.3" alt="Sports Day">
+                    <div class="gallery-overlay">
+                        <h3>Annual Sports Day</h3>
+                        <p>Students competing in track events</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1524178239882-0c4b1b0a42a0?ixlib=rb-4.0.3" alt="Music Performance">
+                    <div class="gallery-overlay">
+                        <h3>Music Recital</h3>
+                        <p>School choir performing at annual concert</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3" alt="Library">
+                    <div class="gallery-overlay">
+                        <h3>School Library</h3>
+                        <p>Resource center with over 20,000 books</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3" alt="Graduation">
+                    <div class="gallery-overlay">
+                        <h3>Graduation Ceremony</h3>
+                        <p>Class of 2023 celebrating achievements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: News & Events Section -->
+    <section class="news-events" id="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>News & Events</h2>
+                <p>Stay updated with the latest happenings at Sengani Girls School</p>
+            </div>
+            
+            <div class="news-container">
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3" alt="Science Fair">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>June 15, 2023</span>
+                        </div>
+                        <h3>Annual Science Fair Showcases Student Innovation</h3>
+                        <p>Our students presented groundbreaking projects at the 15th Annual Science Fair, with topics ranging from renewable energy to medical technology.</p>
+                        <span class="news-category">Academics</span>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3" alt="Sports Championship">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>May 28, 2023</span>
+                        </div>
+                        <h3>Basketball Team Wins Regional Championship</h3>
+                        <p>Our varsity basketball team brought home the regional championship trophy after an intense final match against St. Mary's High School.</p>
+                        <span class="news-category">Sports</span>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3" alt="Cultural Festival">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>April 10, 2023</span>
+                        </div>
+                        <h3>Cultural Diversity Festival Celebrates Heritage</h3>
+                        <p>Students showcased traditions from various Kenyan communities through dance, music, food, and art at our annual cultural festival.</p>
+                        <span class="news-category">Culture</span>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3" alt="Career Day">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>March 22, 2023</span>
+                        </div>
+                        <h3>Career Day Connects Students with Professionals</h3>
+                        <p>Alumni and industry professionals shared career insights with our students during our annual Career Day event.</p>
+                        <span class="news-category">Academics</span>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?ixlib=rb-4.0.3" alt="Community Service">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>February 18, 2023</span>
+                        </div>
+                        <h3>Students Participate in Community Service Week</h3>
+                        <p>Over 300 students volunteered in various community projects including environmental cleanups and teaching at local primary schools.</p>
+                        <span class="news-category">Community</span>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1524178239882-0c4b1b0a42a0?ixlib=rb-4.0.3" alt="Robotics Competition">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>January 30, 2023</span>
+                        </div>
+                        <h3>Robotics Team Qualifies for National Competition</h3>
+                        <p>Our robotics team secured first place in the regional championship and will represent our county at the national finals next month.</p>
+                        <span class="news-category">STEM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>P.O Box 12345, Sengani<br>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+254 712 345 678<br>+254 723 456 789</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>admissions@senganigirls.ac.ke<br>info@senganigirls.ac.ke</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 20px;">Apply Now</h3>
+                    <form id="enquiryForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login Page -->
+    <section class="admin-login-page" id="admin-login">
+        <div class="container">
+            <div class="admin-login-container">
+                <h2>Admin Login</h2>
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminUsername">Username</label>
+                        <input type="text" id="adminUsername" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" class="form-control" required>
+                    </div>
+                    
+                    <div class="admin-actions">
+                        <button type="submit" class="btn btn-accent">Login</button>
+                        <a href="#" class="btn btn-outline" id="backToSite">Back to Site</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section class="admin-dashboard" id="admin-dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Admin Dashboard</h2>
+                <div>
+                    <a href="#" class="btn btn-outline" id="logoutBtn" style="margin-right: 10px;">Logout</a>
+                    <a href="#" class="btn btn-accent" id="viewSiteBtn">View Site</a>
+                </div>
+            </div>
+            
+            <div class="upload-section">
+                <h3>Upload Photo to Gallery</h3>
+                <form id="photoUploadForm">
+                    <div class="form-group">
+                        <label for="photoTitle">Photo Title</label>
+                        <input type="text" id="photoTitle" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photoDescription">Description</label>
+                        <textarea id="photoDescription" class="form-control" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photoFile">Select Photo</label>
+                        <input type="file" id="photoFile" class="form-control" accept="image/*" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-accent">Upload Photo</button>
+                </form>
+                
+                <div class="gallery-preview">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3" alt="Gallery Preview">
+                        <div class="delete-btn">×</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3" alt="Gallery Preview">
+                        <div class="delete-btn">×</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3" alt="Gallery Preview">
+                        <div class="delete-btn">×</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3" alt="Gallery Preview">
+                        <div class="delete-btn">×</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upload-section">
+                <h3>Upload Document</h3>
+                <form id="documentUploadForm">
+                    <div class="form-group">
+                        <label for="docTitle">Document Title</label>
+                        <input type="text" id="docTitle" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="docCategory">Category</label>
+                        <select id="docCategory" class="form-control" required>
+                            <option value="newsletter">Newsletter</option>
+                            <option value="report">Report</option>
+                            <option value="policy">Policy</option>
+                            <option value="form">Form</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="docFile">Select Document</label>
+                        <input type="file" id="docFile" class="form-control" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-accent">Upload Document</button>
+                </form>
+            </div>
+            
+            <div class="upload-section">
+                <h3>Upload Video</h3>
+                <form id="videoUploadForm">
+                    <div class="form-group">
+                        <label for="videoTitle">Video Title</label>
+                        <input type="text" id="videoTitle" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="videoUrl">Video URL (YouTube or Vimeo)</label>
+                        <input type="url" id="videoUrl" class="form-control" placeholder="https://youtube.com/..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="videoDescription">Description</label>
+                        <textarea id="videoDescription" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-accent">Upload Video</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Sengani Girls School</h3>
+                    <p>Empowering young women through quality education, character development, and leadership training since 1987.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#mission">Mission & Vision</a></li>
+                        <li><a href="#messages">Leadership Messages</a></li>
+                        <li><a href="#programs">Academic Programs</a></li>
+                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#news">News & Events</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#" id="adminLoginFooter">Admin Login</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Programs</h3>
+                    <ul class="footer-links">
+                        <li><a href="#programs">Curriculum Overview</a></li>
+                        <li><a href="#programs">STEM Program</a></li>
+                        <li><a href="#programs">Arts Program</a></li>
+                        <li><a href="#programs">Sports & Athletics</a></li>
+                        <li><a href="#programs">Leadership Program</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on school events and news.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn btn-accent">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Sengani Girls School. All Rights Reserved. | Motto: "Wisdom Through Excellence"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        const enquiryForm = document.getElementById('enquiryForm');
+        
+        if(enquiryForm) {
+            enquiryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Form validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                
+                if (name && email && phone && message) {
+                    alert('Thank you for your enquiry! We will contact you shortly.');
+                    enquiryForm.reset();
+                } else {
+                    alert('Please fill in all fields.');
+                }
+            });
+        }
+        
+        // Program Tabs
+        const programTabs = document.querySelectorAll('.program-tab');
+        
+        programTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                programTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Get target content
+                const programId = tab.getAttribute('data-program');
+                const contentId = `${programId}-content`;
+                
+                // Hide all tab content
+                document.querySelectorAll('.program-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected tab content
+                document.getElementById(contentId).classList.add('active');
+            });
+        });
+        
+        // Download buttons functionality
+        document.querySelectorAll('.btn-outline').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('In a complete implementation, this would download the selected file. For now, it shows a confirmation message.');
+            });
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if(newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    alert(`Thank you for subscribing to our newsletter with ${email}!`);
+                    this.reset();
+                }
+            });
+        }
+        
+        // Admin Login Functionality
+        const adminLoginLink = document.getElementById('adminLoginLink');
+        const adminLoginFooter = document.getElementById('adminLoginFooter');
+        const adminLoginPage = document.getElementById('admin-login');
+        const adminDashboard = document.getElementById('admin-dashboard');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const backToSite = document.getElementById('backToSite');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const viewSiteBtn = document.getElementById('viewSiteBtn');
+        const photoUploadForm = document.getElementById('photoUploadForm');
+        const documentUploadForm = document.getElementById('documentUploadForm');
+        const videoUploadForm = document.getElementById('videoUploadForm');
+        
+        // Show admin login
+        [adminLoginLink, adminLoginFooter].forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                adminLoginPage.style.display = 'flex';
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Back to site from admin login
+        if(backToSite) {
+            backToSite.addEventListener('click', (e) => {
+                e.preventDefault();
+                adminLoginPage.style.display = 'none';
+            });
+        }
+        
+        // View site from admin dashboard
+        if(viewSiteBtn) {
+            viewSiteBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                adminDashboard.style.display = 'none';
+            });
+        }
+        
+        // Admin login form submission
+        if(adminLoginForm) {
+            adminLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const username = document.getElementById('adminUsername').value;
+                const password = document.getElementById('adminPassword').value;
+                
+                // Simple authentication (for demo only)
+                if (username === 'admin' && password === 'sengani2023') {
+                    adminLoginPage.style.display = 'none';
+                    adminDashboard.style.display = 'block';
+                    window.scrollTo(0, 0);
+                } else {
+                    alert('Invalid username or password. Please try again.');
+                }
+            });
+        }
+        
+        // Logout functionality
+        if(logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                adminDashboard.style.display = 'none';
+                document.getElementById('adminPassword').value = '';
+            });
+        }
+        
+        // Photo upload form
+        if(photoUploadForm) {
+            photoUploadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const photoTitle = document.getElementById('photoTitle').value;
+                alert(`Photo "${photoTitle}" uploaded successfully!`);
+                photoUploadForm.reset();
+            });
+        }
+        
+        // Document upload form
+        if(documentUploadForm) {
+            documentUploadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const docTitle = document.getElementById('docTitle').value;
+                alert(`Document "${docTitle}" uploaded successfully!`);
+                documentUploadForm.reset();
+            });
+        }
+        
+        // Video upload form
+        if(videoUploadForm) {
+            videoUploadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const videoTitle = document.getElementById('videoTitle').value;
+                alert(`Video "${videoTitle}" uploaded successfully!`);
+                videoUploadForm.reset();
+            });
+        }
+        
+        // Gallery delete functionality
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const galleryItem = this.closest('.gallery-item');
+                if(confirm('Are you sure you want to delete this item?')) {
+                    galleryItem.style.opacity = '0';
+                    setTimeout(() => {
+                        galleryItem.remove();
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
